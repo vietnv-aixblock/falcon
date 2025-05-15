@@ -21,8 +21,8 @@ from trl import SFTTrainer
 from logging_class import start_queue, write_log
 
 # ---------------------------------------------------------------------------
-HfFolder.save_token("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")
-wandb.login("allow", "cd65e4ccbe4a97f6b8358f78f8ecf054f21466d9")
+# HfFolder.save_token("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")
+# wandb.login("allow", "cd65e4ccbe4a97f6b8358f78f8ecf054f21466d9")
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 parser = argparse.ArgumentParser(description="AIxBlock")
@@ -77,13 +77,13 @@ output_dir = "./data/checkpoint"
 # push_to_hub = True if args.push_to_hub and args.push_to_hub == "True" else False
 push_to_hub = True
 hf_model_id = args.hf_model_id if args.hf_model_id else "aixblock"
-push_to_hub_token = (
-    args.push_to_hub_token
-    if args.push_to_hub_token
-    else "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"
-)
-print("Giá trị =============== ", push_to_hub_token)
-# push_to_hub_token = "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"
+# push_to_hub_token = (
+#     args.push_to_hub_token
+#     if args.push_to_hub_token
+#     else "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"
+# )
+# print("Giá trị =============== ", push_to_hub_token)
+push_to_hub_token = "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"
 
 if args.training_args_json:
     with open(args.training_args_json, "r") as f:
